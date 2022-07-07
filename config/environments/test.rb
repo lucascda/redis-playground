@@ -47,4 +47,10 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+   # Redis configuration for caching
+   config.cache_store = :redis_cache_store, {
+    namespace: 'cache',
+    redis: { host: 'localhost', port: 6379, db: 0} 
+    }
 end

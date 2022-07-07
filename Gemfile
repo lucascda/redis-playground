@@ -24,6 +24,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "pry-byebug"
   gem "redis"
+  gem "hiredis"
 end
 
 group :development do
