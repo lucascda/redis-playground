@@ -11,6 +11,8 @@ services:
       - data:/data
     entrypoint: redis-server --appendonly yes
     restart: always
+ 
 
 volumes:
   data:
+
