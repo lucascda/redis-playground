@@ -1,0 +1,11 @@
+<h1>Welcome to Redis Playground</h1>
+
+<h2>Our products</h2>
+<section class= "products-list">
+  <% @products.each do | p | %>
+    <p class="product-info">Name: <%= p.name%></p>
+    <p class="product-info">Price: <%= number_to_currency(p.price)%></p>
+    <p class="product-info">Quantity: <%= p.quantity%></p>
+    <p class="product-info">Category: <%= p.category.name%></p>    
+  <% end %>
+</section>
