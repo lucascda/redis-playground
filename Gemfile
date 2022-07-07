@@ -25,6 +25,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "redis"
   gem "hiredis"
+  gem "capybara"
 end
 
 group :development do
