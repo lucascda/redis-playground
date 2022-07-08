@@ -60,9 +60,10 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  # Redis configuration for caching
-  config.cache_store = :redis_cache_store, {
-   namespace: 'cache',
-   redis: { host: 'localhost', port: 6379, db: 0} 
+  # # Redis configuration for caching
+  config.cache_store = :redis_cache_store, {  
+   url: "redis://localhost:6379"
    }
+  # config.cache_store = $redis
+  #  config.cache_store = :null_store
 end
