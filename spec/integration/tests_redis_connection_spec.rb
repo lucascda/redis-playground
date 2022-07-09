@@ -7,10 +7,10 @@ describe 'try to connect to redis' do
     redis = Redis.new    
     begin
       result = redis.ping
-      puts result
+      
     rescue StandardError => e
-      puts e.inspect
-      puts e.message      
+      e.inspect
+      e.message      
     end
 
     expect(result).to eq 'PONG'

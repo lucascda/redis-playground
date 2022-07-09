@@ -1,7 +1,8 @@
 <h1>Welcome to Redis Playground</h1>
-
+<%= link_to 'Products', products_path %>
 <h2>Our products</h2>
-<section class= "products-list">
+<% if @products.any? %>
+  <section class= "products-list">
   <% @products.each do | p | %>
     <p class="product-info">Name: <%= p.name%></p>
     <p class="product-info">Price: <%= number_to_currency(p.price)%></p>
@@ -9,3 +10,6 @@
     <p class="product-info">Category: <%= p.category.name%></p>    
   <% end %>
 </section>
+<% else %>
+  <p>We dont have products available.</p>
+<% end %>

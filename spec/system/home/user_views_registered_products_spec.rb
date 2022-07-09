@@ -4,9 +4,8 @@ describe 'user visits product pages and sees' do
   it 'products list' do
     first_category = Category.create!(name: 'Eletronics')
     second_category = Category.create!(name: 'Home Stuff')
-
     first_product = Product.create!(name: 'Computer', price: 1800, quantity: 30, category: first_category)
-    first_product = Product.create!(name: 'Spoon', price: 5, quantity: 12, category: second_category)
+    second_product = Product.create!(name: 'Spoon', price: 5, quantity: 12, category: second_category)
 
     visit root_path
     
@@ -19,7 +18,11 @@ describe 'user visits product pages and sees' do
     expect(page).to have_content 'Price: $5.00'
     expect(page).to have_content 'Quantity: 12'
     expect(page).to have_content 'Category: Home Stuff'
+  end
 
-
+  it 'nothing, cause app doenst has any products registered' do
+    visit root_path
+    
+    expect(page).to have_content 'We dont have products available.'
   end
 end
